@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center" style="margin-top:2em">
+      <nav>
+        <button *ngIf="loginService.IsAuthenticated()" routerLink="/" class="btn btn-sm btn-outline-success"
+          routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          Home
+        </button>
+
+        <button *ngIf="loginService.IsAuthenticated()" routerLink="/users" class="btn btn-sm btn-outline-success"
+          routerLinkActive="active">
+          Users
+        </button>
+
+        <button *ngIf="loginService.IsAuthenticated()" routerLink="/roles" class="btn btn-sm btn-outline-success"
+          routerLinkActive="active">
+          Roles
+        </button>
+
+        <button *ngIf="!loginService.IsAuthenticated()" routerLink="/signup" class="btn btn-sm btn-outline-success"
+          routerLinkActive="active">
+          Signup
+        </button>
+
+        <button *ngIf="!loginService.IsAuthenticated()" routerLink="/login" class="btn btn-sm btn-outline-success"
+          routerLinkActive="active">
+          Login
+        </button>
+
+        <button *ngIf="loginService.IsAuthenticated()" (click)="onLogout()" class="btn btn-sm btn-outline-warning"
+          routerLinkActive="active">
+          Logout
+        </button>
+      </nav>
+    </div>
+  </div>
+</div>
